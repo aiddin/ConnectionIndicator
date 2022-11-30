@@ -1,0 +1,55 @@
+{
+  "name": "kendo-vue-template-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "@progress/kendo-data-query": "^1.5.2",
+    "@progress/kendo-licensing": "^1.1.3",
+    "@progress/kendo-vue-progressbars": "^3.3.4",
+    "@progress/kendo-vue-charts": "^3.3.4",
+    "@progress/kendo-vue-layout": "^3.3.4",
+    "@progress/kendo-vue-animation": "^3.3.4",
+    "@progress/kendo-vue-data-tools": "^3.3.4",
+    "@progress/kendo-vue-dateinputs": "^3.3.4",
+    "@progress/kendo-vue-dialogs": "^3.3.4",
+    "@progress/kendo-vue-dropdowns": "^3.3.4",
+    "@progress/kendo-vue-editor": "^3.3.4",
+    "@progress/kendo-vue-form": "^3.3.4",
+    "@progress/kendo-vue-gauges": "^3.3.4",
+    "@progress/kendo-vue-grid": "^3.3.4",
+    "@progress/kendo-vue-indicators": "^3.3.4",
+    "@progress/kendo-vue-inputs": "^3.3.4",
+    "@progress/kendo-vue-labels": "^3.3.4",
+    "@progress/kendo-vue-notification": "^3.3.4",
+    "@progress/kendo-vue-scheduler": "^3.3.4",
+    "@progress/kendo-vue-scrollview": "^3.3.4",
+    "@progress/kendo-vue-tooltip": "^3.3.4",
+    "@progress/kendo-vue-treeview": "^3.3.4",
+    "@progress/kendo-vue-upload": "^3.3.4",
+    "@progress/kendo-vue-intl": "^3.3.4",
+    "@progress/kendo-vue-popup": "^3.3.4",
+    "@progress/kendo-drawing": "latest",
+    "hammerjs": "2.0.8",
+    "bootstrap": "^4.4.1",
+    "core-js": "^3.8.1",
+    "vue": "^3.0.4",
+    "vue-router": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

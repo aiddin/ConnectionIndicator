@@ -1,7 +1,7 @@
 <template>
 <div>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <TcConnectionIndicator msg="Welcome to Your Vue.js App" />
+   
+    <TcConnectionIndicator  />
 </div>
 </template>
 
