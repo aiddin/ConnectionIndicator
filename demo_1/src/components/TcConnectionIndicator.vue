@@ -9,7 +9,7 @@
         <div class="wifi-circle fourth"></div>
     </div>    
 </div>
-<TcConnectionList class="test" />
+<TcConnectionList />
 </div>
 </template>
 
@@ -24,13 +24,10 @@ export default {
 </script>
 
 <style>
-.test{
-  border-style: solid;
-  border-width: medium;
-}
+
 .wifi-symbol {
-  border-style: solid;
-  border-width: medium;
+  /* border-style: solid;
+  border-width: medium; */
     display: none;
 }
 

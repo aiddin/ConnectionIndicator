@@ -1,58 +1,156 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+<div id="app">
+    <h1>Hello Kendo UI for Vue!</h1>
     <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
+        <dropdownlist :data-items="categories" :data-item-key="'CategoryID'" :text-field="'CategoryName'" :default-item="defaultItems" @change="handleDropDownChange">
+        </dropdownlist>
+        &nbsp; Selected category ID: <strong>{{this.dropdownlistCategory}}</strong>
     </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+
+    <grid @rowclick="rowClick" :data-items="dataResult" :pageable="pageable" :sortable="sortable" :sort="sort" :skip="skip" :take="take" :columns="columns" @datastatechange="dataStateChange" :style="{ height: '400px' }">
+
+        <template v-slot:discontinuedTemplate="{ props }">
+            <td colspan="1">
+                <input type="checkbox" :checked=props.dataItem.Discontinued disabled="disabled" />
+            </td>
+        </template>
+    </grid>
+    <window v-if="windowVisible" :title="'Product Details'" @close="closeWindow" :height="250">
+      
+        <dl style="{textAlign:left}">
+            <dt>Product Name</dt>
+            <dd>{{gridClickedRow.ProductName}}</dd>
+            <dt>Product ID</dt>
+            <dd>{{gridClickedRow.ProductID}}</dd>
+            <dt>Quantity per Unit</dt>
+            <dd>{{gridClickedRow.QuantityPerUnit}}</dd>
+        </dl>
+    </window>
+</div>
 </template>
 
 <script>
+import {
+    Window
+} from '@progress/kendo-vue-dialogs';
+import categories from '../appdata/categories.json';
+import products from '../appdata/products.json';
+import {
+    process
+} from '@progress/kendo-data-query';
+import {
+    Grid
+} from '@progress/kendo-vue-grid';
+import {
+    DropDownList
+} from '@progress/kendo-vue-dropdowns';
+import '@progress/kendo-theme-default/dist/all.css';
+
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
+    name: 'App',
+    components: {
+        'dropdownlist': DropDownList,
+        'grid': Grid,
+        'window': Window,
+    },
+    data: function () {
+        return {
+            categories: categories,
+            products: products,
+            defaultItems: {
+                CategoryID: null,
+                CategoryName: "Product categories"
+            },
+            dropdownlistCategory: null,
+            pageable: true,
+            sortable: true,
+            skip: 0,
+            take: 10,
+            sort: [{
+                field: "ProductName",
+                dir: "asc"
+            }],
+            filter: null,
+            columns: [{
+                    field: 'ProductName',
+                    title: 'Product Name'
+                },
+                {
+                    field: 'UnitPrice',
+                    title: 'Price'
+                },
+                {
+                    field: 'UnitsInStock',
+                    title: 'Units in Stock'
+                },
+                {
+                    field: 'Discontinued',
+                    cell: 'discontinuedTemplate'
+                }
+            ],
+            dataResult: [],
+            gridClickedRow: {},
+            windowVisible: false
+        }
+    },
+    created() {
+        const dataState = {
+            skip: this.skip,
+            take: this.take,
+            sort: this.sort,
+        };
+
+        this.dataResult = process(products, dataState);
+    },
+    methods: {
+        handleDropDownChange(e) {
+            this.dropdownlistCategory = e.target.value.CategoryID;
+
+            if (e.target.value.CategoryID !== null) {
+                this.filter = {
+                    logic: 'and',
+                    filters: [{
+                        field: 'CategoryID',
+                        operator: 'eq',
+                        value: e.target.value.CategoryID
+                    }]
+                }
+                this.skip = 0
+            } else {
+                this.filter = []
+                this.skip = 0
+            }
+            let event = {
+                data: {
+                    skip: this.skip,
+                    take: this.take,
+                    sort: this.sort,
+                    filter: this.filter
+                }
+            };
+            this.dataStateChange(event);
+        },
+        createAppState: function (dataState) {
+            this.take = dataState.take;
+            this.skip = dataState.skip;
+            this.sort = dataState.sort;
+        },
+        dataStateChange(event) {
+            this.createAppState(event.data);
+            this.dataResult = process(products, {
+                skip: this.skip,
+                take: this.take,
+                sort: this.sort,
+                filter: this.filter
+            });
+        },
+        rowClick(event) {
+            this.windowVisible = true;
+            this.gridClickedRow = event.dataItem;
+        },
+        closeWindow() {
+            this.windowVisible = false;
+        }
+    }
 }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
-</style>
