@@ -35,28 +35,21 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style scoped>
-/* th, td{
-  padding-bottom: 20px;
-} */
+
 tr{
   border-style: solid;
   border-bottom: 1px;
-  
 }
 th{
-  
   padding-right: 15px;
   padding-left: 15px;
-
 }
 
 table {
-  
     border-collapse: collapse;
     margin: auto;
     width: 70%;
     border-style: solid;
-
 }
 .status{
   width:10%;
