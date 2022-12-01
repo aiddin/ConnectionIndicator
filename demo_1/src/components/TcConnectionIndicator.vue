@@ -46,6 +46,8 @@ export default {
     -o-transform: rotate(-45deg) translate(-100px);
     -webkit-transform: rotate(-45deg) translate(-100px);
     transform: rotate(-45deg) translate(-100px);
+    /* border-style: solid;
+  border-width: medium; */
 }
 
 .wifi-symbol .wifi-circle {
@@ -61,7 +63,9 @@ export default {
     border-color: #00FF00;
     /* border-color:#FF0000;  */
     border-style: solid;
-    border-width: 1em 1em 0 0;
+    border-width: 1em 1em 0em 0em;
+    /* border-style: solid;
+  border-width: medium; */
     -webkit-border-radius: 0 100% 0 0;
     border-radius: 0 100% 0 0;
     opacity: 0;
@@ -116,6 +120,7 @@ export default {
     height: 1em;
     opacity: 1;
     background-color: #00FF00;
+    
     /* background-color:#FF0000;   */
     -o-animation: none;
     -moz-animation: none;

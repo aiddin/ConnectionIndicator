@@ -42,7 +42,7 @@ export default {
     position: absolute;
     bottom: 0;
     left: 0;
-    border-color: #00FF00;
+    border-color: #00D100;
     /* border-color:#FF0000;  */
     border-style: solid;
     border-width: 1em 1em 0 0;
@@ -58,6 +58,7 @@ export default {
 .wifi-symbol .wifi-circle.first {
     width: 7em;
     height: 7em;
+   
     -o-animation-delay: 800ms;
     -moz-animation-delay: 800ms;
     -webkit-animation-delay: 800ms;
