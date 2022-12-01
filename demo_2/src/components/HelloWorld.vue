@@ -77,7 +77,7 @@ export default {
                 },
                 {
                     field: 'UnitPrice',
-                    title: 'Price'
+                    title: 'Price(RM)'
                 },
                 {
                     field: 'UnitsInStock',
