@@ -1,16 +1,16 @@
 <template>
   <div>
-  <HelloWorld/>
+  <TcConnectionList/>
 </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TcConnectionList from './components/TcConnectionList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TcConnectionList
   }
 }
 </script>

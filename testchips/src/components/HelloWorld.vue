@@ -1,15 +1,24 @@
 <template>
-<chiplist
-        :rounded="'small'"
-        :default-data-items="types">
-       
+ <div >
+<chiplist 
+        
+        :rounded='"small"'
+        :theme-color="'warning'" 
+        :fill-mode='"solid"'
+        :default-data-items="types"
+      
+        >
+        
       </chiplist>
+    </div> 
 </template>
 
 <script>
 import { ChipList } from '@progress/kendo-vue-buttons';
 import '@progress/kendo-theme-default/dist/all.css';
-
+const colorMap = {
+    '1': '#B4E5F4',
+}
 
 export default {
     components: {
@@ -38,6 +47,7 @@ export default {
       text: 'PH-EQ',
     }
 ],
+    colorMap:colorMap
             
         };
     },

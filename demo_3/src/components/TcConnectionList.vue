@@ -3,20 +3,20 @@
 
     <table>
         <tr >
-            <th class="status">Wifi</th>
+            <th class="status"><TcIcon/></th>
             <th class="server">
               <h1>Server 1</h1>
               <a>nogf.asiabroker.com</a>
             </th>
-            <th class="exchanges">SG-EQ</th>
+            <th class="exchanges"><TcChipList/></th>
         </tr>
         <tr  >
-            <th class="status">Wifi</th>
+            <th class="status"><TcIcon/></th>
             <th class="server">
               <h1>Server 2</h1>
               <a>nogf-kaprao.asiabroker.com</a>
             </th>
-            <th class="exchanges">SG-EQ</th>
+            <th class="exchanges"><TcChipList/></th>
         </tr>
     </table>
 
@@ -24,10 +24,11 @@
 </template>
 
 <script>
+import TcChipList from '../components/TcChipList.vue'
+import TcIcon from '../components/TcIcon.vue'
 export default {
-    name: 'HelloWorld',
-    props: {
-        msg: String
+    components:{
+      TcChipList,TcIcon
     }
 }
 </script>
@@ -48,7 +49,7 @@ th{
 table {
     border-collapse: collapse;
     margin: auto;
-    width: 70%;
+    width: 80%;
     border-style: solid;
 }
 .status{

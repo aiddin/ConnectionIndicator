@@ -1,60 +1,44 @@
 <!-- eslint-disable no-mixed-spaces-and-tabs -->
 <template>
-  <div>
-<div>
+    
     <div class="wifi-symbol">
         <div class="wifi-circle first"></div>
         <div class="wifi-circle second"></div>
         <div class="wifi-circle third"></div>
         <div class="wifi-circle fourth"></div>
-    </div>    
-</div>
-<!-- <TcConnectionList /> -->
-</div>
+    </div>
 
 </template>
 
 <script>
-// import TcConnectionList from './TcConnectionList.vue'
+
 export default {
 
-    // components: {
-    //     TcConnectionList
-    // }
+   
 }
 </script>
 
 <style>
 
 .wifi-symbol {
-  /* border-style: solid;
-  border-width: medium; */
-    display: none;
-}
+    
+    position:absolute;
+    right:85%;
 
-.wifi-symbol {
-
-    display: block;
-    position: absolute;
-    top: 50%;
-    display: inline-block;
-    width: 150px;
-    height: 150px;
-    margin-top: -187.5px;
-    -ms-transform: rotate(-45deg) translate(-100px);
-    -moz-transform: rotate(-45deg) translate(-100px);
-    -o-transform: rotate(-45deg) translate(-100px);
-    -webkit-transform: rotate(-45deg) translate(-100px);
-    transform: rotate(-45deg) translate(-100px);
+   
+    -ms-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg) ;
+    -webkit-transform: rotate(-45deg) ;
+    transform: rotate(-45deg) ;
 }
 
 .wifi-symbol .wifi-circle {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     display: block;
-    width: 100%;
-    height: 100%;
-    font-size: 21.42857px;
+   
+    font-size:20%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -72,6 +56,8 @@ export default {
 }
 
 .wifi-symbol .wifi-circle.first {
+    width: 7em;
+    height: 7em;
     -o-animation-delay: 800ms;
     -moz-animation-delay: 800ms;
     -webkit-animation-delay: 800ms;
