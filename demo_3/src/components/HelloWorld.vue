@@ -43,21 +43,29 @@ tr{
   border-bottom: 1px;
   
 }
+th{
+  
+  padding-right: 15px;
+  padding-left: 15px;
+
+}
 
 table {
   
     border-collapse: collapse;
     margin: auto;
-    width: 1000px;
+    width: 70%;
     border-style: solid;
 
 }
 .status{
-  width:100px;
+  width:10%;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 .server{
   text-align: left;
-  width:300px;
+  width:30%;
   padding-bottom: 15px;
 }
 .exchanges{
