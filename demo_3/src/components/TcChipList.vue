@@ -1,6 +1,6 @@
 <template>
 <div>
-    
+  
     <chiplist  :rounded='"large"' :fill-mode='"solid"' :default-data-items="types">
 
     </chiplist>
