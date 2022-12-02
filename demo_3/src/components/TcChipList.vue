@@ -1,5 +1,6 @@
 <template>
 <div>
+    {{exchanges}}
     <chiplist :rounded='"small"' :fill-mode='"solid"' :default-data-items="types">
 
     </chiplist>
@@ -12,15 +13,14 @@ import {
     ChipList
 } from '@progress/kendo-vue-buttons';
 import '@progress/kendo-theme-default/dist/all.css';
-const colorMap = {
-    '1': '#B4E5F4',
-}
+
 
 export default {
     components: {
         'chiplist': ChipList,
 
     },
+    props:['exchanges'],
     data() {
         return {
             types: [{
@@ -40,9 +40,10 @@ export default {
                     text: 'PH-EQ',
                 }
             ],
-            colorMap: colorMap
+          
 
         };
+
     },
 
 }

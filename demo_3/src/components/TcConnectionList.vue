@@ -2,22 +2,23 @@
 <div>
 
     <table>
-        <tr >
+     
+        <tr  v-for="server in servers" v-bind:key="server.id">
             <th class="status"><TcIcon/></th>
             <th class="server">
-              <h1>Server 1</h1>
-              <a>nogf.asiabroker.com</a>
+              <h1>{{(server.type)}}</h1>
+              <a>{{server.httpServer}}</a>
             </th>
-            <th class="exchanges"><TcChipList/></th>
+            <th class="exchanges"><TcChipList v-bind:exchanges="server. supportExchanges"/></th>
         </tr>
-        <tr  >
+        <!-- <tr  >
             <th class="status"><TcIcon/></th>
             <th class="server">
               <h1>Server 2</h1>
               <a>nogf-kaprao.asiabroker.com</a>
             </th>
             <th class="exchanges"><TcChipList/></th>
-        </tr>
+        </tr> -->
     </table>
 
 </div>
@@ -29,7 +30,10 @@ import TcIcon from '../components/TcIcon.vue'
 export default {
     components:{
       TcChipList,TcIcon
-    }
+    },
+    props:[
+      'servers'
+    ]
 }
 </script>
 
