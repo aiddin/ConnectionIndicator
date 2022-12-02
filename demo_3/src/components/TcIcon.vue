@@ -23,8 +23,8 @@ export default {
 .wifi-symbol {
     
     position:absolute;
-    right:85%;
-
+    right:86%;
+  
    
     -ms-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
