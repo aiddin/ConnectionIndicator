@@ -1,11 +1,11 @@
 <template>
-<table class="w-4/5   m-auto">
+<table class="  m-auto">
 
     <tr class="border-thin border-2 border-gray-600  " v-for="server in servers" v-bind:key="server.id">
         <th class="">
             <TcIcon v-bind:icon="server.status" />
         </th>
-        <th class=" text-left w-1/10 ">
+        <th class=" text-left ">
             <h1 class="text-2xl">{{(server.type)}}</h1>
             <a class="text-sm ">{{server.httpServer}}</a>
         </th>
