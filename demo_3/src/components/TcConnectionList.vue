@@ -1,17 +1,17 @@
 <template>
-<table class="  m-auto">
+<table class=" border-collapse border border-slate-400 m-auto">
 
-    <tr class="border-thin border-2 border-gray-600  " v-for="server in servers" v-bind:key="server.id">
-        <th class="">
+    <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server.id">
+        <td class="px-2">
             <TcIcon v-bind:icon="server.status" />
-        </th>
-        <th class=" text-left ">
-            <h1 class="text-2xl">{{(server.type)}}</h1>
+        </td>
+        <td class=" pl-1 text-left ">
+            <h1 class="text-xl"><b>{{(server.type)}}</b></h1>
             <a class="text-sm ">{{server.httpServer}}</a>
-        </th>
-        <th class="text-left ">
+        </td>
+        <td class=" pl-1 pr-1 text-left ">
             <TcChipList v-bind:exchanges="server.supportExchanges" />
-        </th>
+        </td>
     </tr>
 
 </table>
