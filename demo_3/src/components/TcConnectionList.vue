@@ -1,5 +1,5 @@
 <template>
-<table class=" pr-1 border-slate-400  w-full">
+<table class=" border-slate-400  w-full">
 
     <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server.id">
         <td class="px-2">
