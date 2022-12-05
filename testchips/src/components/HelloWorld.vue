@@ -1,50 +1,15 @@
 <template>
 <div>
-    <chiplist :rounded='"small"' :theme-color="'warning'" :fill-mode='"solid"' :default-data-items="types">
-    </chiplist>
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class=" m-auto w-20 h-20 border-2 ">
+            <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.062 0 8.25 8.25 0 00-11.667 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.204 3.182a6 6 0 018.486 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0 3.75 3.75 0 00-5.304 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182a1.5 1.5 0 012.122 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0l-.53-.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
+        </svg>
+    </div>
 </div>
 </template>
 
 <script>
-import {
-    ChipList
-} from '@progress/kendo-vue-buttons';
-import '@progress/kendo-theme-default/dist/all.css';
-const colorMap = {
-    '1': '#B4E5F4',
-}
-
-export default {
-    components: {
-        'chiplist': ChipList,
-
-    },
-    data() {
-        return {
-            types: [{
-                    text: 'MY-EQ',
-
-                },
-                {
-                    text: 'MY-DV',
-
-                },
-                {
-                    text: 'SG-EQ',
-                },
-                {
-                    text: 'ID-EQ',
-                },
-                {
-                    text: 'PH-EQ',
-                }
-            ],
-            colorMap: colorMap
-
-        };
-    },
-
-}
+export default {}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
