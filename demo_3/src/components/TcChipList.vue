@@ -41,6 +41,18 @@ export default {
             }
         }
 
+    },
+    updated() {
+        this.types.length=0
+        for (let i = 0; i < this.exchanges.length; i++) {
+
+            this.test = {
+                text: this.exchanges[i],
+            }
+
+            this.types.push(this.test);
+
+        }
     }
 
 }

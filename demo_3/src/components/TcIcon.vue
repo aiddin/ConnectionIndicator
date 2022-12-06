@@ -49,6 +49,24 @@ export default {
 
         }
 
+    },
+    updated(){
+        if (this.icon == 0) {
+                this.style_1 = {
+                    color: 'red',
+                    animation: 'none'
+                }
+            } else if (this.icon == 1) {
+                this.style_1 = {
+                    color: 'green',
+                    animation: "none"
+                }
+            } else {
+                this.style_1 = {
+                    color: 'grey',
+                    animation: '0.5s linear infinite condemned_blink_effect'
+                }
+            }
     }
 }
 </script>
