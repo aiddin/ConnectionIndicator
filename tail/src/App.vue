@@ -1,15 +1,15 @@
 <template>
   
-  <HelloWorld/>
+  <TcConnectionIndicator/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TcConnectionIndicator from './components/TcConnectionIndicator.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TcConnectionIndicator
   }
 }
 </script>
