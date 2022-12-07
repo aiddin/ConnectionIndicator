@@ -45,40 +45,6 @@ export default {
                         "SG",
                         "HK"
                     ],
-                    status: 0
-                },
-                {
-                    type: "mock",
-                    httpServer: "mock/market.json",
-                    websocketServer: null,
-                    supportExchanges: [
-                        "O",
-                        "A",
-                        "N"
-                    ],
-                    status: 0
-                }
-              
-            ],
-            
-            servers_1: [{
-                    type: "kaprao",
-                    httpServer: "https://kaprao-dev.asiaebroker.com",
-                    websocketServer: "ws://45.112.197.233:29999/ws-api/v1",
-                    supportExchanges: [
-                        "KL"
-                    ],
-                    status: 0
-                },
-                {
-                    type: "njqc",
-                    httpServer: "https://nginx-uat.asiaebroker.com/ath/njqc",
-                    websocketServer: null,
-                    supportExchanges: [
-                        "MY",
-                        "SG",
-                        "HK"
-                    ],
                     status: 1
                 },
                 {
@@ -92,109 +58,21 @@ export default {
                     ],
                     status: 2
                 }
-            ],
-            servers_2: [{
-                    type: "kaprao",
-                    httpServer: "https://kaprao-dev.asiaebroker.com",
-                    websocketServer: "ws://45.112.197.233:29999/ws-api/v1",
-                    supportExchanges: [
-                        "KL"
-                    ],
-                    status: 0
-                },
-                {
-                    type: "njqc",
-                    httpServer: "https://nginx-uat.asiaebroker.com/ath/njqc",
-                    websocketServer: null,
-                    supportExchanges: [
-                        "MY",
-                        "SG",
-                        "HK"
-                    ],
-                    status: 1
-                },
-                {
-                    type: "mock",
-                    httpServer: "mock/market.json",
-                    websocketServer: null,
-                    supportExchanges: [
-                        "O",
-                        "A",
-                        "N",
-                        "T"
-                    ],
-                    status: 1
-                }
-
-            ],
-            servers_3: [ {
-                    type: "kaprao",
-                    httpServer: "https://kaprao-dev.asiaebroker.com",
-                    websocketServer: "ws://45.112.197.233:29999/ws-api/v1",
-                    supportExchanges: [
-                        "KL"
-                    ],
-                    status: 0
-                },
-                {
-                    type: "njqc",
-                    httpServer: "https://nginx-uat.asiaebroker.com/ath/njqc",
-                    websocketServer: null,
-                    supportExchanges: [
-                        "MY",
-                        "SG",
-                        "HK"
-                    ],
-                    status: 0
-                },
-                {
-                    type: "mock",
-                    httpServer: "mock/market.json",
-                    websocketServer: null,
-                    supportExchanges: [
-                        "O",
-                        "A",
-                        "N"
-                    ],
-                    status: 0
-                }
               
-            
             ],
+            
+            
 
         }
     },
-    created() {
-        this.display()
-    },
+  
 
     methods: {
         toggleDialog() {
             this.visible = !this.visible;
         },
-        display() {
-
-            setInterval(this.changedata, 3000)
-
-        },
-        changedata() {
-            if (this.counter == 3) {
-                this.counter = 0
-            }
-            this.counter = this.counter + 1
-            if (this.counter == 1) {
-                this.servers = this.servers_1
-            } else if(this.counter == 2){
-                this.servers = this.servers_2
-            }else
-            {
-                this.servers = this.servers_3
-            }
-        }
     },
-    mounted() {
-
-    }
+   
 
 }
 </script>
