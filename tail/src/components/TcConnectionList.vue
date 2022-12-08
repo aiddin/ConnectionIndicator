@@ -3,7 +3,7 @@
 
     <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server.id">
         <td class="px-2">
-         wifi
+         <TcConnectionIndicator/>
         </td>
         <td class=" pl-1 text-left ">
             <h1 class="text-xl"><b>{{(server.type)}}</b></h1>
@@ -18,10 +18,12 @@
 </template>
 
 <script>
+import TcConnectionIndicator from '../components/TcConnectionIndicator.vue'
+
 import TcChipList from '../components/TcChipList.vue'
 export default {
     components: {
-        TcChipList,
+        TcChipList,TcConnectionIndicator
         
     },
     props: [

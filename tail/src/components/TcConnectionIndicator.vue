@@ -2,7 +2,7 @@
     <div class="blink">
 
    
-   <FontAwesomeIcon color='red'  icon="fa-solid fa-wifi" size="2xl"/>
+   <FontAwesomeIcon color='red'  icon="fa-solid fa-wifi"/>
     </div>
 </template>
 
