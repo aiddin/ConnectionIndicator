@@ -1,32 +1,30 @@
 <template>
-<div style="color:green">
+    <div class="blink">
 
-    <svg @click="toggleDialog" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class=" m-auto h-20  border-2 ">
-        <path fill-rule="evenodd" d="M1.371 8.143c5.858-5.857 15.356-5.857 21.213 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.06 0c-4.98-4.979-13.053-4.979-18.032 0a.75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182c4.1-4.1 10.749-4.1 14.85 0a.75.75 0 010 1.061l-.53.53a.75.75 0 01-1.062 0 8.25 8.25 0 00-11.667 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.204 3.182a6 6 0 018.486 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0 3.75 3.75 0 00-5.304 0 .75.75 0 01-1.06 0l-.53-.53a.75.75 0 010-1.06zm3.182 3.182a1.5 1.5 0 012.122 0 .75.75 0 010 1.061l-.53.53a.75.75 0 01-1.061 0l-.53-.53a.75.75 0 010-1.06z" clip-rule="evenodd" />
-    </svg>
-    <window v-if="visible" :initial-width="400" :title="'Connection Server'" :resizable=true @close="toggleDialog" :color=blue>
-        <TcConnectionList v-bind:servers="servers" />
-    </window>
-</div>
+   
+   <FontAwesomeIcon color='red'  icon="fa-solid fa-wifi" size="2xl"/>
+    </div>
 </template>
 
   
 <script>
-import TcConnectionList from '../components/TcConnectionList.vue'
-import {
-    Window
-} from '@progress/kendo-vue-dialogs';
+
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faWifi } from '@fortawesome/free-solid-svg-icons'
+library.add(faWifi)
+
+
 export default {
     name: 'App',
     components: {
-        TcConnectionList,
-        'window': Window,
+        FontAwesomeIcon
+      
     },
     data() {
         return {
             
-            counter: 0,
-            visible: false,
+            
             servers: [{
                     type: "kaprao",
                     httpServer: "https://kaprao-dev.asiaebroker.com",
@@ -68,9 +66,7 @@ export default {
   
 
     methods: {
-        toggleDialog() {
-            this.visible = !this.visible;
-        },
+       
     },
    
 
@@ -79,12 +75,21 @@ export default {
 
   
 <style>
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+
+.blink {
+    
+  animation: 0.5s linear infinite condemned_blink_effect;
+}
+
+@keyframes condemned_blink_effect {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
 }
 </style>

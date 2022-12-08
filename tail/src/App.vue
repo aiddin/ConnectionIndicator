@@ -1,16 +1,64 @@
 <template>
+  <div>
+    <TcConnectionIndicator/>
+    <div>
+  <TcConnectionList v-bind:servers="servers" />
+</div>
   
-  <TcConnectionIndicator/>
+</div>
 </template>
 
 <script>
+import TcConnectionList from './components/TcConnectionList.vue'
 import TcConnectionIndicator from './components/TcConnectionIndicator.vue'
-
 export default {
   name: 'App',
   components: {
-    TcConnectionIndicator
-  }
+    TcConnectionList,TcConnectionIndicator
+  },
+  
+  data(){
+        return {
+            
+           
+            servers: [{
+                    type: "kaprao",
+                    httpServer: "https://kaprao-dev.asiaebroker.com",
+                    websocketServer: "ws://45.112.197.233:29999/ws-api/v1",
+                    supportExchanges: [
+                        "KL"
+                    ],
+                    status: 0
+                },
+                {
+                    type: "njqc",
+                    httpServer: "https://nginx-uat.asiaebroker.com/ath/njqc",
+                    websocketServer: null,
+                    supportExchanges: [
+                        "MY",
+                        "SG",
+                        "HK"
+                    ],
+                    status: 1
+                },
+                {
+                    type: "mock",
+                    httpServer: "mock/market.json",
+                    websocketServer: null,
+                    supportExchanges: [
+                        "O",
+                        "A",
+                        "N"
+                    ],
+                    status: 2
+                }
+              
+            ],
+            
+            
+
+        }
+    },
 }
 </script>
 

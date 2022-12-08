@@ -3,7 +3,7 @@
 
     <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server.id">
         <td class="px-2">
-            <TcIcon v-bind:icon="server.status" />
+         wifi
         </td>
         <td class=" pl-1 text-left ">
             <h1 class="text-xl"><b>{{(server.type)}}</b></h1>
@@ -19,11 +19,10 @@
 
 <script>
 import TcChipList from '../components/TcChipList.vue'
-import TcIcon from '../components/TcIcon.vue'
 export default {
     components: {
         TcChipList,
-        TcIcon
+        
     },
     props: [
         'servers'
@@ -39,5 +38,6 @@ th {
     padding-left: 15px;
     padding-bottom: 15px;
 }
+
 
 </style>
