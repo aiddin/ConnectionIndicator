@@ -1,12 +1,13 @@
-<template>
+<template><div>
+
 <table class=" border-slate-400  w-full">
 
     <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server.id">
         <td class="px-2">
-         <TcConnectionIndicator/>
+         <TcConnectionIndicator  v-bind:status="server.status"/>
         </td>
         <td class=" pl-1 text-left ">
-            <h1 class="text-xl"><b>{{(server.type)}}</b></h1>
+            <h1 class="text-xl"><b>{{server.type}}</b></h1>
             <a class="text-sm ">{{server.httpServer}}</a>
         </td>
         <td class=" pl-1 pr-1 text-left ">
@@ -14,7 +15,7 @@
         </td>
     </tr>
 
-</table>
+</table></div>
 </template>
 
 <script>
@@ -28,7 +29,8 @@ export default {
     },
     props: [
         'servers'
-    ]
+    ],
+
 }
 </script>
 

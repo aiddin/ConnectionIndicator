@@ -1,6 +1,6 @@
 <template>
   <div>
-    <TcConnectionIndicator/>
+    <TcConnectionIndicator  v-bind:servers="servers" />
     <div>
   <TcConnectionList v-bind:servers="servers" />
 </div>
@@ -39,7 +39,7 @@ export default {
                         "SG",
                         "HK"
                     ],
-                    status: 1
+                    status: 2
                 },
                 {
                     type: "mock",
@@ -50,7 +50,7 @@ export default {
                         "A",
                         "N"
                     ],
-                    status: 2
+                    status: 1
                 }
               
             ],
