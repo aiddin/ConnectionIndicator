@@ -90,8 +90,6 @@ export default {
                 }
 
             }
-
-            // this.connection = checkcondition()
         },
         checkcondition() {
             for (this.i = 0; this.i < this.servers.length; this.i++) {

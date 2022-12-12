@@ -37,11 +37,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style>
-th {
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-bottom: 15px;
-}
+
 
 
 </style>
