@@ -2,7 +2,7 @@
 
 <table class=" border-slate-400  w-full">
 
-    <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server.id">
+    <tr class=" border-collapse border border-slate-400 " v-for="server in servers" v-bind:key="server">
         <td class="px-2">
          <TcConnectionIndicator  v-bind:status="server.status"/>
         </td>
@@ -11,7 +11,7 @@
             <a class="text-sm ">{{server.httpServer}}</a>
         </td>
         <td class=" pl-1 pr-1 text-left ">
-            <TcChipList v-bind:exchanges="server.supportExchanges" />
+            <TcChipList v-bind:exchanges="server.supportExchanges"  />
         </td>
     </tr>
 

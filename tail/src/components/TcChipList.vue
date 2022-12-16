@@ -1,6 +1,6 @@
 <template>
 <div>
-
+    
     <chiplist :theme-color="'info'" :rounded='"large"' :fill-mode='"solid"' :default-data-items="types">
 
     </chiplist>
@@ -18,7 +18,7 @@ export default {
         'chiplist': ChipList,
 
     },
-    props: ['exchanges'],
+    props: ['exchanges','id'],
     data() {
         return {
             types: [],

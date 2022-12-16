@@ -60,9 +60,6 @@ export default {
                 }
               
             ],
-            
-            
-
         }
     },
   
