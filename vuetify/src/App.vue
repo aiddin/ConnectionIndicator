@@ -1,15 +1,15 @@
 <template>
   
-  <HelloWorld/>
+  <TcChipList/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TcChipList from './components/TcChipList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TcChipList
   }
 }
 </script>

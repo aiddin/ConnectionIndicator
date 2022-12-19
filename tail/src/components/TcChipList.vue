@@ -1,7 +1,11 @@
 <template>
 <div>
 
-    <chiplist :theme-color="'info'" :rounded='"large"' :fill-mode='"solid"' :default-data-items="types">
+    <chiplist 
+    :theme-color="'info'" 
+    :rounded='"large"' 
+    :fill-mode='"solid"' 
+    :default-data-items="types">
 
     </chiplist>
 </div>
