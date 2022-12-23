@@ -5,7 +5,7 @@
             {{ exchange }}
         </v-chip>
     </v-chip-group>
-    {{chip}}
+    {{temp}}
 </div>
 </template>
 
@@ -16,12 +16,13 @@ export default {
     ],
     data() {
         return {
-            chip: 'test'
+            chip: 'test',
+            temp: []
         }
     }, 
     methods: {
         onDrop() {
-            this.chip = this.draggedData;
+            this.temp.push( this.draggedData);
         },
         allowDrop(e) {
             e.preventDefault();

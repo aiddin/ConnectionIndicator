@@ -10,7 +10,7 @@
             <h1 class="text-xl"><b>{{server.type}}</b></h1>
             <a class="text-sm ">{{server.httpServer}}</a>
         </td>
-        <td class=" pl-1 pr-1 text-left " @dragover="allowDrop">
+        <td class=" pl-1 pr-1 text-left " @dragover="allowDrop"> <!-- @dragover="allowDrop" -->
             <TcChipList v-bind:exchanges="server.supportExchanges" />
         </td>
     </tr>
@@ -30,9 +30,18 @@ export default {
     props: [
         'servers'
     ],
+    data() {
+        return {
+            temp: []
+        }
+    },
     methods:{
         allowDrop(e) {
       e.preventDefault();
+
+     
+
+     
 }
     }
 
