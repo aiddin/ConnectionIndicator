@@ -18,7 +18,7 @@ export default {
         return {
             chip: 'test'
         }
-    },
+    }, 
     methods: {
         onDrop() {
             this.chip = this.draggedData;
